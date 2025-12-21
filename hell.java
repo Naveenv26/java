@@ -4,26 +4,22 @@ public class hell {
 
     public static void main(String[] args) {
         Scanner scan=new Scanner(System.in);
-        
-        System.out.println("1.ADD");
-        System.out.println("2.SUB");
-        System.out.println("3.mul");
-        int choice= scan.nextInt();
-        switch (choice) {
-            case 1:
-                System.out.println("1.ADD");
-                break;
-            case 2:
-                System.out.println("2.SUB");
-                break;
-            case 3:
-                System.out.println("3.mul");
-                break;
-        
-            default:
-                System.out.println("invalid value");
-                break;
+        int i=1;
+        int j=2;
+        while(i<5)
+        {
+            System.out.println(i);
+            i++;
         }
+        do{
+            System.out.println(j);
+            j++;
+        }while(j<6);
+        for(int a=1;a<10; a++){
+            System.out.println("ki"+a);
+            
+        }
+
 scan.close();
         }
     }
