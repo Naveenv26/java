@@ -3,15 +3,14 @@ import java.util.Scanner;
 public class hell {
 
     public static void main(String[] args) {
-        try(Scanner scan= new Scanner(System.in)){
-            String a=scan.nextLine();
-            float b=scan.nextInt();
-            scan.nextLine();
-            String c=scan.nextLine();
-            
-            System.out.println("My name is : "+a);
-            System.out.println("My score is: "+b/10);
-            System.out.println("My dept is: "+c);
+        Scanner scan=new Scanner(System.in);
+        int age =scan.nextInt();
+        scan.close();
+        if(age<18){
+            System.out.println(age+" is less 18");
+        }
+        else{
+            System.out.println(age +"is bigger 18");
+        }
         }
     }
-}
