@@ -4,17 +4,21 @@ public class hell {
 
     public static void main(String[] args) {
         Scanner scan=new Scanner(System.in);
-        // average of n numbers
-        int sum=0;
-        System.out.print("enter how much : ");
-        int input=scan.nextInt();
-        for(int i=1;i<=input;i++){
-            System.out.print(i+" enter the numbers : ");
-            int val=scan.nextInt();
-            sum=sum+val;
+        // given number is prime or !
+        System.out.print("enter a number");
+        int num = scan.nextInt();
+        int s=0;
+        for(int i=1;i<=num;i++){
+            if(num%i==0){
+                s++;
+            }
         }
-        System.out.println("the Average of "+input+" values are : "+sum/input);
-
+        if(s==2){
+            System.out.print(num+" is prime");
+        }
+        else{
+            System.out.print(num+" is not prime");
+        }
 
 scan.close();
         }
