@@ -4,21 +4,15 @@ public class hell {
 
     public static void main(String[] args) {
         Scanner scan=new Scanner(System.in);
-        int i=1;
-        int j=2;
-        while(i<5)
-        {
-            System.out.println(i);
-            i++;
+        // factorial
+        System.out.println("enter a value : ");
+        int a=1;
+        int val=scan.nextInt();
+        for(int i=1;i<=val;i++){
+            a=a*i;
+            System.out.println(a);
         }
-        do{
-            System.out.println(j);
-            j++;
-        }while(j<6);
-        for(int a=1;a<10; a++){
-            System.out.println("ki"+a);
-            
-        }
+
 
 scan.close();
         }
