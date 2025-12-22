@@ -4,14 +4,16 @@ public class hell {
 
     public static void main(String[] args) {
         Scanner scan=new Scanner(System.in);
-        // factorial
-        System.out.println("enter a value : ");
-        int a=1;
-        int val=scan.nextInt();
-        for(int i=1;i<=val;i++){
-            a=a*i;
-            System.out.println(a);
+        // average of n numbers
+        int sum=0;
+        System.out.print("enter how much : ");
+        int input=scan.nextInt();
+        for(int i=1;i<=input;i++){
+            System.out.print(i+" enter the numbers : ");
+            int val=scan.nextInt();
+            sum=sum+val;
         }
+        System.out.println("the Average of "+input+" values are : "+sum/input);
 
 
 scan.close();
