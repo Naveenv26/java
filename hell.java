@@ -6,19 +6,22 @@ public class hell {
         Scanner scan=new Scanner(System.in);
         // GCD logic
         System.out.print("enter a number ");
-        int num1 = scan.nextInt();
-        System.out.print("enter a number ");
-        int num2 = scan.nextInt();
-        int a=0;
+        int num = scan.nextInt();
+        int sum=0;
 
-            for(int i=1;i<=(num1);i++){
-                if(num2%i==0 && num1%i==0){
-                    a=i;
-                }
+        for(int i=1;i<=num-1;i++){
+            if(num%i==0){
+                sum=i+sum;
             }
-        System.out.println(a);
-        
-        
+        }
+        if(num==sum){
+            System.out.println(num+" perfect value");
+        }
+        else{
+            System.out.println(num + " not perfect");
+        }
+
+
 scan.close();
 
         }
