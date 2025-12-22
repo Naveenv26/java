@@ -4,17 +4,20 @@ public class hell {
 
     public static void main(String[] args) {
         Scanner scan=new Scanner(System.in);
-        // Reverse a number
+        // LCM
         System.out.print("enter a number ");
-        int num = scan.nextInt();
-        int count=0;
-
-        while (num!=0) {
-            num=num/10;
-            count=count+1;
+        int num1 = scan.nextInt();
+        System.out.print("enter a number ");
+        int num2 = scan.nextInt();
+        int val=0,lcm;
+        for(int i=1;i<=num1;i++){
+            if(num1%i==0 && num2%i==0){
+                val=i;
+                System.out.println(val);
+            }
         }
-        System.out.println(count);
-
+        lcm=(num1*num2)/val;
+        System.out.println(lcm);
 scan.close();
 
         }
