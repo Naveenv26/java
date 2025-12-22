@@ -7,14 +7,13 @@ public class hell {
         // Reverse a number
         System.out.print("enter a number ");
         int num = scan.nextInt();
-        int temp,rev=0;
-        while(num!=0){
-            temp=num%10;
-            rev=(rev*10)+temp;
-            num=num/10;
-        }
-        System.out.println(rev);
+        int count=0;
 
+        while (num!=0) {
+            num=num/10;
+            count=count+1;
+        }
+        System.out.println(count);
 
 scan.close();
 
