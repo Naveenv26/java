@@ -1,22 +1,23 @@
 public class hell {
+
     public static void main(String[] args) {
-        student s1=new student();
-        s1.name="john";
-        s1.age=5;
-        student s2=new student();
-        s2.name="vara";
-        s2.age=50;
-
-        s1.display();
-        s2.display();
-        }
+        book c=new book();
+        book b=new book();
+        c.title="";
+        c.price=2004;
+        b.title="vinland";
+        b.price=5000;
+        c.showdetails();
+        b.showdetails();
     }
-
-class student{
-        String name;
-        int age;
-
-        void display(){
-            System.out.println(name +':'+ age);
-        }
 }
+
+class book{
+    String title;
+    int price;
+
+    void showdetails(){
+        System.out.println(title +" : "+ price);
+    }
+}
+
