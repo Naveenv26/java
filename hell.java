@@ -1,19 +1,29 @@
 import java.util.Scanner;
-
 public class hell {
 
-    public static void main(String[] args) {
-        Scanner scan=new Scanner(System.in);
-        // pattern printing
-        System.out.print("enter a number ");
-        int num1 = scan.nextInt();
-        for(int i=1;i<=num1;i++){
-            System.out.println(" ");
-            for(int j=1;j<=i;j++){
-                System.out.print("*");
-            }
-        }
-scan.close();
+        String name;
+        int age;
+
+        void display(String name,int age){
+            System.out.print(name +':'+ age);
 
         }
+            
+    
+    public static void main(String[] args) {
+        hell val =new hell();
+
+        Scanner scan=new Scanner(System.in);
+        System.out.print("enter how many set :");
+        int n=scan.nextInt();
+        for(int i=0;i<n;i++){
+            scan.nextLine();
+            val.name=scan.nextLine();
+            val.age=scan.nextInt();
+        val.display(val.name,val.age);
+        }
+        
+        
+        scan.close();
     }
+}
