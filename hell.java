@@ -1,15 +1,12 @@
 public class Hell {
 
 
-    public static void main(String[] args) {
-        
-        int []a=new int[]{10,20,30,40,50};
-        
-        for(int ele :a){//Enhanced for loop
-            System.out.println(ele);
+    public static void main(String[] args) {//adding array nums
+        int sum=0;
+        int[]a=new int[]{5,10,15,20};
+        for(int i=0;i<(a.length);i++){
+            sum=a[i]+sum;
         }
-        for(int i=0;i<(a.length);i++){//normal for loop
-            System.out.println("---"+a[i]);
-        }
+        System.out.println(sum);
     }
     }
