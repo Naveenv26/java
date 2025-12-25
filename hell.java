@@ -7,13 +7,13 @@ public class hell {
         bank.balance=2000;
         bank.name="naveen";
         bank.display();
-        bank.balance=bank.deposit(500);
+        bank.deposit(500);
         bank.display();
         bank1.account=896;
         bank1.balance=1000;
         bank1.name="thors";
         bank1.display();
-        bank1.balance=bank1.withdraw(6000);
+        bank1.withdraw(6000);
         bank1.display();
         
     }
@@ -23,17 +23,18 @@ class bankaccount{
     String name;
     int account,balance;
 
-    int deposit(int amount){
-        return (balance+amount);
+    void deposit(int amount){
+        balance= (balance+amount);
     }
-    int withdraw(int amount){
+    void withdraw(int amount){
         if(balance>=amount){
             balance=balance-amount;
         }
         else{
             System.out.println("insufficient amount");
+            System.out.println("-------------****-----------");
         }
-        return balance;
+        
     }
     void display(){
         System.out.println("holder name :"+name);
