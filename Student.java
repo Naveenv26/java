@@ -5,8 +5,14 @@ public class Student {
     int[]mark;
     static int count;
 
-    Student(){
+    Student(int id,String name,int[]mark){
+        this.mark=mark;
+        this.id=id;
+        this.name=name;
         count++;
+        totalmark(mark);
+        averagemark();
+        
     }
 
 
@@ -35,20 +41,12 @@ public class Student {
 
 
     public static void main(String[] args) {
-        Student s=new Student();
-        Student s1=new Student();
+        Student s=new Student(101,"Naveen",new int[]{10,20,30});
+        Student s1=new Student(102,"arun",new int[]{10,50,40});
         
-        s.id=101;
-        s.name="Naveen";
-        s.mark=new int[]{10,20,30,20,10};
-        s.total=s.totalmark(s.mark);
-        s.average=s.averagemark();
+
         s.display();
-        s1.id=102;
-        s1.name="Arun";
-        s1.mark=new int[]{90,10,100,10,90};
-        s1.total=s1.totalmark(s1.mark);
-        s1.average=s1.averagemark();
+
         s1.display();
 
         System.out.println("Total student: "+ count);
