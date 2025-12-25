@@ -1,17 +1,15 @@
 public class Hell {
-    static int x;
-    int y;
-    Hell(){
-        x=x+1;
-        y=y+1;
-        System.out.println(x +"=x : y="+ y);
-
-    }
 
 
     public static void main(String[] args) {
-        Hell a=new Hell();
-        Hell a1=new Hell();
-
+        
+        int []a=new int[]{10,20,30,40,50};
+        
+        for(int ele :a){//Enhanced for loop
+            System.out.println(ele);
+        }
+        for(int i=0;i<(a.length);i++){//normal for loop
+            System.out.println("---"+a[i]);
+        }
     }
-}
+    }
