@@ -1,18 +1,13 @@
 public class Hell {
-    int len,bre;
-
-    Hell(int len,int bre){
-        this.len=len;
-        this.bre=bre;
-    }
-    void display(){
-        System.out.println("area of rectangle : "+len*bre);
+    static int track;
+    Hell(){
+        this.track=track+1;
+        System.out.println(track);
 
     }
-
     public static void main(String[] args) {
-        Hell a=new Hell(10,5);
-        a.display();
-
+        Hell a=new Hell();
+        Hell a1=new Hell();
+        Hell a2=new Hell();
     }
 }
