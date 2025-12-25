@@ -1,9 +1,17 @@
 public class Hell {
-    
+    static int x;
+    int y;
+    Hell(){
+        x=x+1;
+        y=y+1;
+        System.out.println(x +"=x : y="+ y);
+
+    }
+
 
     public static void main(String[] args) {
-        int []a;
-        a=new int[5];
-        System.out.println(a[0]);
+        Hell a=new Hell();
+        Hell a1=new Hell();
+
     }
-    }
+}
