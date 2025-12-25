@@ -1,13 +1,18 @@
 public class Hell {
+    int len,bre;
 
-    Hell(int id,String name,int salary){
-        System.out.println("ID : "+id);
-        System.out.println("Name : "+name);
-        System.out.println("salary : "+salary);
+    Hell(int len,int bre){
+        this.len=len;
+        this.bre=bre;
+    }
+    void display(){
+        System.out.println("area of rectangle : "+len*bre);
+
     }
 
     public static void main(String[] args) {
-        Hell emp =new Hell(101,"Naveen",25000);
+        Hell a=new Hell(10,5);
+        a.display();
 
     }
 }
