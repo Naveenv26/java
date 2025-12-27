@@ -1,8 +1,12 @@
 public class bank {
-    int account,balance;
+    int account;
     String name;
     static int count;
+    private int balance;
 
+    int getbalance(){
+        return balance;
+    }
     bank(int account){
         count++;
         this.account=account;
@@ -24,13 +28,12 @@ public class bank {
         this.account=account;
         this.balance=balance;
         this.name=name;
-        
-
     }
+
     void deposit(int amount){
         System.out.println("Deposit : "+amount);
         balance=balance+amount;
-        System.out.println("Updated Balance : "+balance);
+        System.out.println("Updated Balance : "+getbalance());
         System.out.println("------------************-------------");
     }
 
@@ -38,7 +41,7 @@ public class bank {
         System.out.println("Withdraw : "+amount);
         if(balance>=amount){
             balance=balance-amount;
-            System.out.println("updated balance : "+balance);
+            System.out.println("updated balance : "+getbalance());
             System.out.println("------------************-------------");
         }
         else{
@@ -51,7 +54,7 @@ public class bank {
     void display(){
         System.out.println("Account number : "+account);
         System.out.println("Name : "+name);
-        System.out.println("balance : "+balance);
+        System.out.println("balance : "+getbalance());
     }
 
     public static void main(String[] args) {
