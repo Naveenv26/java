@@ -6,24 +6,35 @@ public class Hell {
     }
 
     public static void main(String[] args) {
-        child s=new child();
-        s.display();
+
+        Account a=new Saving(5000);
+        a.show();
     }
 }
 
-class Parent{
-    void display(){
-        System.out.println("parent constructor called");
+class Account{
+
+    Account(int balance){
+        this.balance=balance;
     }
+    int balance;
+    void show(){
+        System.out.println(balance);
+    }
+
 }
 
-class child extends Parent{
-    void display(){
-        System.out.println("orewa child uu");
+class Saving extends Account{
+    
+    Saving(int balance){
+        super(balance);
+        System.out.println(balance);
+        
     }
     
-
+    void show(){
+        super.show();
+    }
 }
-
 
 
