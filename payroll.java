@@ -1,67 +1,62 @@
 public class payroll {
     public static void main(String[] args) {
-        Fulltime f=new Fulltime(101, "naveen", 5000,100);
-        Employee b=new Employee(201, "jiji", 500);
-        f.display();
-        b.display();
-        System.out.println("total employee : "+ Employee.employeecount);
+        Fulltime emp=new Fulltime(101, "hilo", 10000.0);
+        contractor ee=new contractor(201, "logwer", 100, 50.0);
+        emp.display();
+        ee.display();
     }
 }
 
-class Employee{
-    private int id,basesalary;
+abstract class Employee{
+    private int id;
     private String name;
-    static int employeecount;
 
-    Employee(int id, String name,int basesalary){
+
+    Employee(int id, String name){
         this.id=id;
-        this.basesalary=basesalary;
         this.name=name;
-        employeecount++;
+
     }
-    int id(){
-        return id;
-    }
-    String na(){
-        return name;
-    }
-    int cal(){
-        return basesalary;
-    }
+
+    abstract Double calculatesalary();
+
     void display(){
         System.out.println("ID : "+id);
         System.out.println("name : "+name);
-        System.out.println("salary : "+cal());
+        System.out.println("name : "+calculatesalary());
     }
 
 
 }
 class Fulltime extends Employee{
-    private int bonus=0;
-    Fulltime(int id,String name,int basesalary,int bonus){
-        super(id,name,basesalary);
-        this.bonus=bonus;
-    }
+
     int []history=new int[10];
     int i=0;
-    void his() {
-        if (i < history.length) {
-            history[i] = this.cal();
-            
-            System.out.println("History updated: " + history[i]);
-            i++;
-        } else {
-            System.out.println("Memory Full!");
-        }
-    }
-    int cal(){
-        return super.cal()+bonus;
-    }
-    void display(){
-        System.out.println("ID : "+super.id());
-        System.out.println("name : "+super.na());
+    Double monthlysalary;
 
-        System.out.println("salary : "+cal());
-        his();
+    Fulltime(int id,String name,Double monthlysalary){
+        super(id,name);
+        this.monthlysalary=monthlysalary;
+    }
+
+    Double calculatesalary(){
+        return monthlysalary;
+    }
+
+}
+
+class contractor extends Employee{
+    Double hourlyrate;
+    int hoursworked;
+
+    contractor(int id,String name,int hoursworked,Double hourlyrate){
+        super(id, name);
+        this.hourlyrate=hourlyrate;
+        this.hoursworked=hoursworked;
+    }
+
+    @Override
+    Double calculatesalary() {
+        return hourlyrate*hoursworked;
     }
 }
