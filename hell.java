@@ -1,46 +1,44 @@
 public class Hell {
 
     public static void main(String[] args) {
-        payment pp=new creditcard(5000);
-        payment pay=new paypal(2000);
+        smartphone s=new smartphone("apple");
+        s.turnon();
+        s.takephoto();
+        s.playsong();
+    }
+}
+
+abstract class Device{
+    String name;
+    Device(String name){
+        this.name=name;
+    }
+    abstract void turnon();
+}
+
+interface camera{
+    void takephoto();
+}
+
+interface musicplayer {
+
+    void playsong();
+}
+
+class smartphone extends Device implements camera ,musicplayer{
+    smartphone(String name){
+        super(name);
         
-        pay.processpayment();
-        pay.detais();
-        pp.processpayment();
-        pp.detais();
     }
-}
-
-abstract class payment{
-    int Amount;
-    payment(int Amount){
-        this.Amount=Amount;
+    void turnon(){
+        System.out.println("Device turing ON ");
+        System.out.println("WELCOME TO "+name);
     }
-    abstract void processpayment();
-            
-        void detais(){
-        System.out.println("Amount : "+ this.Amount);
-    
-    }
-}
-
-class creditcard extends payment{
-
-    creditcard(int Amount){
-        super(Amount);
+    public void takephoto(){
+        System.out.println("photo taken");
     }
     
-    @Override
-    void processpayment() {
-        System.out.println("card processed");
+    public void playsong(){
+        System.out.println("playing song");
     }
-}
-
-class paypal extends payment{
-    paypal(int Amount){
-        super(Amount);
     }
-    void processpayment(){
-        System.out.println("paypal processed");
-    }
-}
