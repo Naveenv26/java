@@ -1,29 +1,23 @@
 public class calculator {
-    public static void main(String[] args) {
 
-        voting vote=new voting();
+    public static void main(String[] args) {
+        test t=new test();
         try{
-            vote.checkage(1);
+            t.pause();
         }
-        catch(ArithmeticException e){
-            System.out.println(e.getMessage());
+        catch(Exception e){
+            System.out.println(e);
         }
         finally{
-            System.out.println("--*--");
+            System.out.println("2sec");
         }
         
-
     }
 }
 
-class voting{
-    void checkage(int age){
-        if (age<18){
-            throw new ArithmeticException("Access denied");
-        }
-        else{
-            System.out.println("eligible to vote");
-        }
+class test{
+    void pause() throws InterruptedException{
+        System.out.println("sleeping");
+        Thread.sleep(2000);
+    }
 }
-}
-
