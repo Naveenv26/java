@@ -4,16 +4,28 @@ public class cal {
 
     
     public static void main(String[] args) {
-        ArrayList<String> item=new ArrayList<>();
-        item.add("Milk");
-        item.add("egg");
-        item.add("bread");
-        System.out.println(item);
-        item.remove("egg");
-        item.add("butter");
-        System.out.println(item.get(1));
+        ArrayList<Student> st=new ArrayList<>();
+        st.add(new Student(80, "naveen"));
+        st.add(new Student(35, "rahul"));
+        st.add(new Student(86,"joij"));
+        for(Student jj : st){
+            if(jj.mark>40){
+                System.out.println(jj.name);
+        }
 
-        System.out.println(item);
-
+        }
+       
     }
+}
+
+class Student{
+    int mark;
+    String name;
+
+    Student(int mark,String name){
+        this.mark=mark;
+        this.name=name;
+    }
+
+
 }
