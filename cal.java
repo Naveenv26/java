@@ -1,16 +1,27 @@
 import java.util.ArrayList;
 
 import java.util.HashSet;
+import java.util.Iterator;
 
 public class cal {
 
     public static void main(String[] args) {
-        ArrayList<String> email=new ArrayList<>();
-        email.add("a@test.com");
-        email.add("b@test.com");
-        email.add("a@test.com");
+        ArrayList<Integer> task=new ArrayList<>();
+        task.add(80);
+        task.add(70);
+        task.add(20);
+        task.add(50);
+        task.add(40);
 
-        HashSet<String> aa=new HashSet<>(email);
-        System.out.println(aa);
+        Iterator<Integer> it=task.iterator();
+
+        while(it.hasNext()){
+            int num=it.next();
+            if(num <50){
+                it.remove();
+            }
+        }
+        System.out.println(task);
+
     }
 }
