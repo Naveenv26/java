@@ -1,20 +1,19 @@
 public class Hell {
 
     public static void main(String[] args) {
-        Storage<Integer> a=new Storage<>(20);
-        Storage<String> b=new Storage<>("alakazam");
-        a.display();
-        b.display();
+        math a=new math(20);
+        math b=new math(10.5);
     }
 }
 
-class Storage<T>{
-    T item;
-
-    Storage(T item){
-        this.item=item;
+class math<T extends Number>{
+    T num;
+    math(T num){
+        this.num=num;
     }
-    void display(){
-        System.out.println(item);
+
+    double square(){
+        
+        return num.doubleValue();
     }
 }
