@@ -1,27 +1,65 @@
-import java.util.ArrayList;
-
-
-import java.util.Iterator;
-
 public class cal {
 
     public static void main(String[] args) {
-        ArrayList<Integer> task=new ArrayList<>();
-        task.add(80);
-        task.add(70);
-        task.add(20);
-        task.add(50);
-        task.add(40);
-
-        Iterator<Integer> it=task.iterator();
-
-        while(it.hasNext()){
-            int num=it.next();
-            if(num <50){
-                it.remove();
-            }
-        }
-        System.out.println(task);
-
+        account a=new account("name",202);
+        a.display();
+        a.deposit(150);
+        a.display();
+        a.withdraw(50);
+        a.display();
     }
 }
+
+abstract class users{
+    String name;
+    int accountno;
+    private double price;
+
+    users(String name,int accountno){
+        this.name=name;
+        this.accountno=accountno;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+    void setPrice(double price){
+        this.price=price;
+    }
+    abstract void display();
+}
+
+class account extends users{
+    account(String name,int accountno){
+        super(name, accountno);
+
+    }
+    void display(){
+        System.out.println("Name : "+name);
+        System.out.println("Account no : "+accountno);
+        System.out.println("current balance : "+getPrice());
+    }
+    double amot;
+    void deposit(double amt){
+        if(amt>0){
+            amot=getPrice()+amt;
+            setPrice(amot);
+        }
+        else{
+            System.out.println("-ve number is not possible");
+        }
+    }
+
+    void withdraw(double amt){
+
+        if (amt <=getPrice()){
+            amot=getPrice()-amt;
+            setPrice(amot);
+        }
+        else{
+            System.out.println("invalid amount");
+        }
+    }
+
+}
+
