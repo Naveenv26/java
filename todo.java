@@ -5,12 +5,10 @@ import java.util.Scanner;
 
 public class todo {
     public static void main(String[] args) {
-
         List<String> list =new ArrayList<>();
         Scanner bb=new Scanner(System.in);
         System.out.println("__ welcome to the todo app __");
         while (true) {
-            
             System.out.println("1. ADD task");
             System.out.println("2. show");
             System.out.println("3. Delete");
@@ -21,12 +19,10 @@ public class todo {
                 n=bb.nextInt();
                 bb.nextLine();
             } catch (InputMismatchException e) {
-                System.out.println("gg");
+                System.out.println("");
                 bb.nextLine();
                 continue;
-                
             }
-            
             switch (n) {
                 case 1:
                     System.out.print("enter the task : ");
@@ -34,7 +30,6 @@ public class todo {
                     if(s11.isEmpty())
                     {
                     System.out.println("** Enter an valid input **");
-                    
                     }
                     else{
                         list.add(s11);
@@ -48,8 +43,6 @@ public class todo {
                         for(String a : list){
                             b++;
                             System.out.println(b +"."+a);
-                            
-                            
                         }}
                     else{
                         System.out.println("*** Nothing TO SHOW ***");
@@ -69,7 +62,6 @@ public class todo {
                         bb.nextLine();
                     }
                     break;
-
                 case 4:
                     System.out.println("Exiting....");
                     bb.close();
@@ -80,6 +72,7 @@ public class todo {
             }
         }
     }
-
 }
+
+
 
